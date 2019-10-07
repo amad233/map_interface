@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns   = "http://www.w3.org/ns/widgets"
+    xmlns:gap   = "http://phonegap.com/ns/1.0"
+    id          = "com.gs.mapp"
+    versionCode = "1"
+    version     = "1.0.0" >
+
+<!-- versionCode is optional and Android only -->
+
+  <name>User Interface For My Map</name>
+
+  <description>
+      Just the second exercise for Lecture 4
+  </description>
+
+  <author href="https://www.facebook.com/ahmad.jahoor" email="ajahoor@umail.utm.umail.ac">
+   	Ahmad Jahoor
+  </author>
+
+
+</widget>

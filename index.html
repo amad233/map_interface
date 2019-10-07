@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--_______________________Mobile Stuff---------------------->
+  <link rel="stylesheet" href="js/jquery.mobile.css" type="text/css" />
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery.mobile.js"></script>
+  <script src="cordova.js"></script>
+
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>UI FOR YOUR MAP</title>
+<!--_______________________JAVESCRIPT---------------------->
+<script type="text/javascript">
+  function calculate_zafrla(){
+    var num1 = parseFloat(document.getElementById("num1").value);
+    var num2 = parseFloat(document.getElementById("num2").value);
+    var op = document.getElementById("operation").value;
+    if(op=="+"){
+      var final_out= num1+num2;
+    }
+    if(op=="-"){
+      var final_out= num1-num2;
+    }
+    if(op=="/"){
+      var final_out= num1/num2;
+    }
+    if(op=="*"){
+      var final_out= num1*num2;
+    }
+    document.getElementById("display_result").innerHTML= final_out;
+    document.getElementById("display_operation").innerHTML=num1 + " "+ op + " " + num2;
+  }
+
+</script>
+</head>
+
+<body>
+  <!--_______________________________-HOME PAGE--------------------->
+  <div data-role="page" id="home_page">
+    <div data-role="header" class="ui-header">
+      <h3>User Interface For Map</h3>
+    </div>
+
+    <div data-role="main" class="ui-content">
+      <h3>
+        <a href="mylocation.html" target="_self" data-transition="pop" class="ui-btn ui-corner-all">Find Where I Am</a>
+      </h3>
+      <h3>
+        <a href="search.html" target="_self" data-transition="pop" class="ui-btn ui-corner-all">Search for a Place</a>
+      </h3>
+      <h3>
+        <a href="around.html" target="_self" data-transition="pop" class="ui-btn ui-corner-all">Click anywhere on our Map</a>
+      </h3>
+
+    </div>
+
+    <div data-role="footer" class="ui-footer">
+      <p class="ui-title">Lecture 4 - Exercise 2</p>
+    </div>
+  </div>
+
+  <!--___________________________-CALCULATOR PAGE--------------->
+  <div data-role="page" id="calculator_page">
+    <div data-role="header" class="ui-header">
+      <h4>Simple Calculator</h4>
+    </div>
+
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#home_page" data-icon="home">Home</a></li>
+        <li><a href="#calculator_page" data-icon="grid">Calculator</a></li>
+        <li><a href="#info_page" data-icon="info">Info</a></li>
+      </ul>
+    </div>
+    <div data-role="main" class="ui-content">
+      <fieldset class="ui-field-contain">
+        <input type="text" name="first_number" id="num1">
+
+          <select name="operation_select" id="operation">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="/">/</option>
+            <option value="*">*</option>
+          </select>
+
+        <input type="text" name="second_number" id="num2">
+        <a href="#result_page" onclick="calculate_zafrla()" class="ui-btn">Calculate</a>
+      </fieldset>
+    </div>
+
+    <div data-role="footer" class="ui-footer">
+
+      <p class="ui-title"> Homework </p>
+    </div>
+  </div>
+
+  <!---------------------------RESULTS PAGE------------------------->
+  <div data-role="page" id="result_page">
+    <div data-role="header" class="ui-header">
+      <h4>Results</h4>
+    </div>
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#home_page" data-icon="home">Home</a></li>
+        <li><a href="#calculator_page" data-icon="grid">Calculator</a></li>
+        <li><a href="#info_page" data-icon="info">Info</a></li>
+      </ul>
+    </div>
+    <div data-role="main" class="ui-content">
+      <p><b>Operations</b></p>
+      <p id="display_operation"></p>
+      <p><b>Results</b></p>
+      <p id="display_result"></p>
+      <a class="ui-btn ui-icon-back ui-btn-icon-left" data-rel="back">Back</a>
+
+    </div>
+
+    <div data-role="footer" class="ui-footer">
+      <p class="ui-title"> Homework </p>
+    </div>
+  </div>
+
+
+  <!---------------------------INFO PAGE---------------------------->
+  <div data-role="page" id="info_page" data-dialog="true">
+    <div data-role="header" class="ui-header">
+      <h4>More Info</h4>
+    </div>
+    <div data-role="main" class="ui-content">
+      <p>
+        You have requested more information about the app!
+      </p>
+      <a href="#home_page" class="ui-btn ui-icon-back ui-btn-icon-left" data-rel="back">Dismiss</a>
+    </div>
+  </div>
+
+
+</body>
+
+</html>
